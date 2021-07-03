@@ -10,20 +10,20 @@ local colors = require(global_theme)
 gls.left[1] = {
     FirstElement = {
         provider = function()
-            return "▋"
+            return ""
         end,
-        highlight = {colors.nord_blue, colors.nord_blue}
+        highlight = {colors.statusline_bg, colors.blue}
     }
 }
 
 gls.left[2] = {
     statusIcon = {
         provider = function()
-            return "  "
+            return "   "
         end,
-        highlight = {colors.statusline_bg, colors.nord_blue},
-        separator = "  ",
-        separator_highlight = {colors.nord_blue, colors.lightbg}
+        highlight = {colors.statusline_bg, colors.blue},
+        separator = "▋ ",
+        separator_highlight = {colors.blue, colors.lightbg}
     }
 }
 
@@ -40,8 +40,8 @@ gls.left[4] = {
         provider = {"FileName"},
         condition = condition.buffer_not_empty,
         highlight = {colors.white, colors.lightbg},
-        separator = " ",
-        separator_highlight = {colors.lightbg, colors.lightbg2}
+        separator = " ",
+        separator_highlight = {colors.lightbg, colors.statusline_bg}
     }
 }
 
@@ -51,8 +51,8 @@ gls.left[5] = {
             local dir_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
             return "  " .. dir_name .. " "
         end,
-        highlight = {colors.grey_fg2, colors.lightbg2},
-        separator = " ",
+        highlight = {colors.grey_fg2, colors.statusline_bg},
+        separator = " ",
         separator_highlight = {colors.lightbg2, colors.statusline_bg}
     }
 }
@@ -145,10 +145,10 @@ gls.right[3] = {
 gls.right[4] = {
     viMode_icon = {
         provider = function()
-            return " "
+            return "  "
         end,
-        highlight = {colors.statusline_bg, colors.red},
-        separator = " ",
+        highlight = {colors.lightbg, colors.red},
+        separator = " ",
         separator_highlight = {colors.red, colors.statusline_bg}
     }
 }
@@ -180,10 +180,10 @@ gls.right[5] = {
 gls.right[6] = {
     some_icon = {
         provider = function()
-            return " "
+            return "  "
         end,
-        separator = "",
-        separator_highlight = {colors.green, colors.lightbg},
+        separator = " ",
+        separator_highlight = {colors.purple, colors.statusline_bg},
         highlight = {colors.lightbg, colors.green}
     }
 }
@@ -201,6 +201,14 @@ gls.right[7] = {
             end
             local result, _ = math.modf((current_line / total_line) * 100)
             return "  " .. result .. "% "
+        end,
+        highlight = {colors.green, colors.lightbg}
+    }
+}
+gls.right[8] = {
+    fuck = {
+        provider = function()
+            return ""
         end,
         highlight = {colors.green, colors.lightbg}
     }
