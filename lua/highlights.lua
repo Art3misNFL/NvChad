@@ -120,9 +120,9 @@ fg_bg("BufferLineIndicator", black2, black2)
 fg_bg("BufferLineIndicatorSelected", black, black)
 
 -- separators
-fg_bg("BufferLineSeparator", black2, black2)
-fg_bg("BufferLineSeparatorVisible", black2, black2)
-fg_bg("BufferLineSeparatorSelected", black, black2)
+fg_bg("BufferLineSeparator", blue, black2)
+fg_bg("BufferLineSeparatorVisible", black, black2)
+fg_bg("BufferLineSeparatorSelected", blue, black2)
 
 -- modified buffers
 fg_bg("BufferLineModified", red, black2)
@@ -142,4 +142,4 @@ fg("DashboardShortcut", grey_fg)
 fg("DashboardFooter", grey_fg)
 
 -- Default nvim bg (based on terminal bg)
--- cmd "hi Normal guibg=#1e222a"
+cmd "hi Normal guibg=#1e222a" -- enable for nvim gui
